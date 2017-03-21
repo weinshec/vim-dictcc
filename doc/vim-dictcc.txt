@@ -1,27 +1,49 @@
-vim-dictcc.txt* A short multi line description of your plugin
+vim-dictcc.txt* Vim plugin for dictionary lookups using dict.cc
 
 ===============================================================================
-CONTENTS                                                    *template-contents*
+CONTENTS                                                  *vim-dictcc-contents*
 
-    1. Intro ................................................. |template-intro|
-    2. Requirements .................................... |templte-requirements|
-    3. Usage ................................................. |template-usage|
-    4. Licence ............................................. |template-licence|
+    1. Intro ............................................... |vim-dictcc-intro|
+    2. Requirements ................................. |vim-dictcc-requirements|
+    3. Usage ............................................... |vim-dictcc-usage|
 ===============================================================================
-1. Intro                                                    *test-runner-intro*
+1. Intro                                                     *vim-dictcc-intro*
 
-Overview of plugin
+This plugin can be used to query for dictionary translations using dict.cc from
+within vim.
 
-2. Requirements                                         *template-requirements*
+2. Requirements                                       *vim-dictcc-requirements*
 
-What additional programs are required to run the plugin
+In order for vim-dictcc to work, you must have vim compiled with python3
+support, which you can check by running
 
-3. Usage                                                       *template-usage*
+    :echo has('python3')
 
-How to use the plugin. What functions does it give the user?
+from within. If the above command returns 1, you have python3 support.
 
-4. Licence                                                   *template-licence*
+Further you need the python module beautifulsoup4 to be installed as it is used
+to parse the html-response from dict.cc. If not already done, you can install
+it from your systems package repository or use pip, like
 
-This is open source make sure to include a licence
+    pip install beautifulsoup4
+
+Remember to run this command with sudo if installing system-wide.
+
+3. Usage                                                     *vim-dictcc-usage*
+
+The plugin supports simple lookups **ENG <-> DEU** for now and provides a
+vim-command for querying, e.g.
+
+    :Dict lunch
+
+will query for *lunch* and shows the results in newly created buffer.
+
+The `DictCur` instead will query for the word currently under cursor, which is
+convenient to remap, e.g.
+
+    inoremap <c-s> <Esc>:DictCur<CR>
+    nnoremap <c-s> :DictCur<CR>
+
+Now Ctrl-s in normal and insert mode will invoke the translation query.
 
 vim:ft=help
