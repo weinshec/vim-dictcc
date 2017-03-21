@@ -1,0 +1,27 @@
+vim-dictcc.txt* A short multi line description of your plugin
+
+===============================================================================
+CONTENTS                                                    *template-contents*
+
+    1. Intro ................................................. |template-intro|
+    2. Requirements .................................... |templte-requirements|
+    3. Usage ................................................. |template-usage|
+    4. Licence ............................................. |template-licence|
+===============================================================================
+1. Intro                                                    *test-runner-intro*
+
+Overview of plugin
+
+2. Requirements                                         *template-requirements*
+
+What additional programs are required to run the plugin
+
+3. Usage                                                       *template-usage*
+
+How to use the plugin. What functions does it give the user?
+
+4. Licence                                                   *template-licence*
+
+This is open source make sure to include a licence
+
+vim:ft=help
