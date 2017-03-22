@@ -17,11 +17,12 @@ from dictcc import DictQuery
 def create_new_buffer(contents):
     vim.command('rightbelow split dictcc')
     vim.command('normal! ggdG')
-    vim.command('setlocal filetype=txt')
+    vim.command('setlocal filetype=dictcc')
     vim.command('call append(0, {0})'.format(contents))
     vim.command('setlocal readonly')
     vim.command('setlocal buftype=nowrite')
     vim.command('normal! gg')
+    vim.command('map <buffer> q :close<CR>')
 
 create_new_buffer(DictQuery(vim.eval("a:word")).as_lines())
 

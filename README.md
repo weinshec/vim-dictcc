@@ -44,5 +44,7 @@ nnoremap <c-s> :DictCur<CR>
 ```
 Now **Ctrl-s** in `normal` and `insert` mode will invoke the translation query.
 
+The newly created `dictcc` buffer can be closed by pressing the `q` key.
+
 ## Development
 vim-dictcc is in an early stage of development and your help appreciated. Feel free to create issues and contribute PRs.

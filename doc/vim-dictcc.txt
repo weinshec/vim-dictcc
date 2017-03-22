@@ -46,4 +46,6 @@ convenient to remap, e.g.
 
 Now Ctrl-s in normal and insert mode will invoke the translation query.
 
+The newly created `dictcc` buffer can be closed by pressing the `q` key.
+
 vim:ft=help
