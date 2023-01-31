@@ -22,7 +22,7 @@ def create_new_buffer(contents):
     vim.command('setlocal readonly')
     vim.command('setlocal buftype=nowrite')
     vim.command('normal! gg')
-    vim.command('map <buffer> q :close<CR>')
+    vim.command('map <buffer><silent> q :bdelete<CR>')
 
 create_new_buffer(DictQuery(vim.eval("a:word")).as_lines())
 
