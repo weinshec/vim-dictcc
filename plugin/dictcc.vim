@@ -15,7 +15,8 @@ python3 << endOfPython
 from dictcc import DictQuery
 
 def create_new_buffer(contents):
-    vim.command('rightbelow split dictcc')
+    vim.command('silent! :bdelete [dictcc]')
+    vim.command('rightbelow split [dictcc]')
     vim.command('normal! ggdG')
     vim.command('setlocal filetype=dictcc')
     vim.command('call append(0, {0})'.format(contents))
